@@ -9,7 +9,7 @@ public class StartButtonScript : MonoBehaviour
     public void PlayButton()
     {
         Debug.Log("Play button clicked!");
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(1); //1 is to specify gamescene, more reliable than string
 
     }
 
