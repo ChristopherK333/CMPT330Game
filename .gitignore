@@ -1,31 +1,3 @@
-<<<<<<< HEAD
-[Ll]ibrary/
-[Tt]emp/
-[Oo]bj/
-[Bb]uild/
-[Bb]uilds/
-[Ll]ogs/
-[Mm]emoryCaptures/
-
-# User-specific files
-*.user
-*.userprefs
-*.csproj
-*.sln
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Visual Studio cache
-.vs/
-
-# Rider
-.idea/
-
-# Unity crash reports
-sysinfo.txt
-=======
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
@@ -39,6 +11,7 @@ sysinfo.txt
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 *.log
+UserSettings/Layouts/*.dwlt
 
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
 *.blend1
@@ -125,4 +98,3 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
->>>>>>> 2eb4d9a3654e422ffe0f3be7cebe58774ac5fda1
