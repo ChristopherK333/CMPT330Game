@@ -914,12 +914,12 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: a52da600-3e10-477c-913c-419cc6a675fd
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
+  projectName: CMPT 330 Game
   organizationId: merlin457
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
