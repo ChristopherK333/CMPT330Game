@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Trail.SetActive(false);
         rb = GetComponent<Rigidbody2D>();
     }
 
