@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
 
     public GameObject Trail;
 
+    public float dashCost;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (canDash && Input.GetKeyDown(KeyCode.Space))
         {
+            GetComponent<PlayerController>().stamina -= dashCost;
+
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
             {
                 StartCoroutine(Dash(new Vector2(1f, 1f)));
