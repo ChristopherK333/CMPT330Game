@@ -255,7 +255,7 @@ MonoBehaviour:
   arrow: {fileID: 630137783934853353, guid: f04d1ac0684354646aeaf0b0a7ef66f8, type: 3}
   arrowTransform: {fileID: 198911893}
   canFire: 1
-  timeBetweenFiring: 0.3
+  timeBetweenFiring: 1
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -13161,7 +13161,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 0
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -13176,12 +13176,12 @@ Tilemap:
   - m_RefCount: 0
     m_Data: {fileID: 0}
   m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: 21300036, guid: dda6bbdb704d84847b38f9eced72bf59, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 1
     m_Data:
