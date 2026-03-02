@@ -33,6 +33,8 @@ public class arrowScript : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             Destroy(gameObject);
+            other.gameObject.GetComponent<EnemyScript>().enemyHP -= 10f;
+            Debug.Log("enemy hit");
         }
     }
 }

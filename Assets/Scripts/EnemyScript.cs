@@ -10,6 +10,8 @@ public class EnemyScript : MonoBehaviour
 
     public float damage;
 
+    public float enemyHP = 50f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +38,11 @@ public class EnemyScript : MonoBehaviour
 
                 // transform.LookAt(player.position);  // rotation
             }
+        }
+
+        if (enemyHP <= 0) 
+        {
+            Destroy(gameObject);
         }
     }
 
