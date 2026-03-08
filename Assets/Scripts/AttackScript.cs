@@ -21,6 +21,7 @@ public class AttackScript : MonoBehaviour
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        Melee.SetActive(false);
     }
 
     // Update is called once per frame
