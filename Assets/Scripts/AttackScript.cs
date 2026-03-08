@@ -12,6 +12,11 @@ public class AttackScript : MonoBehaviour
     private float timer;
     public float timeBetweenFiring;
 
+    public GameObject Melee;
+    bool isAttacking = false;
+    float atkDuration = 0.3f;
+    float atkTimer = 0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,12 +27,11 @@ public class AttackScript : MonoBehaviour
     void Update()
     {
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-
         Vector3 rotation = mousePos - transform.position;
-
         float rotZ = Mathf.Atan2(rotation.y, rotation.x) * Mathf.Rad2Deg;
-
         transform.rotation = Quaternion.Euler(0, 0, rotZ);
+
+        CheckMeleeTimer();
 
         if (!canFire)
         {
@@ -43,6 +47,34 @@ public class AttackScript : MonoBehaviour
         {
             canFire = false;
             Instantiate(arrow, arrowTransform.position, Quaternion.identity);
+        }
+
+        if (Input.GetMouseButton(1))
+        {
+            OnAttack();
+        }
+    }
+
+    void OnAttack()
+    {
+        if (!isAttacking)
+        {
+            Melee.SetActive(true);
+            isAttacking = true;
+        }
+    }
+
+    void CheckMeleeTimer()
+    {
+        if (isAttacking)
+        {
+            atkTimer += Time.deltaTime;
+            if (atkTimer >= atkDuration)
+            {
+                atkTimer = 0;
+                isAttacking = false;
+                Melee.SetActive(false);
+            }
         }
     }
 }
