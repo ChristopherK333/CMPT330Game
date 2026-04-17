@@ -916,11 +916,11 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 2
   windowsGamepadBackendHint: 0
-  cloudProjectId: a52da600-3e10-477c-913c-419cc6a675fd
+  cloudProjectId: aaff77b5-2202-401a-815f-b37d5239c396
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: CMPT 330 Game
-  organizationId: merlin457
+  projectName: Everstrife
+  organizationId: pelayoz
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

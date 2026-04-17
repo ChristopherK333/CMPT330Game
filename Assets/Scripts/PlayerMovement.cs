@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject Trail;
 
     public float dashCost;
+    public AudioSource dashSFX;
+
+    public AudioSource hitSFX;
 
     // Start is called before the first frame update
     void Start()
@@ -31,9 +34,10 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.velocity = moveInput * moveSpeed;
 
+        // player dash, direction depending on what button is pressed
         if (canDash && Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<PlayerController>().stamina -= dashCost;
+            playSFX();
 
             if (Input.GetKey(KeyCode.W) && Input.GetKey(KeyCode.D))
             {
@@ -84,7 +88,8 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator Dash(Vector2 direction)
     {
-        Trail.SetActive(true);
+        // dash cooldwon timer
+        Trail.SetActive(true); // trail when dashing
         canDash = false;
         currentDashTime = startDashTime;
 
@@ -98,5 +103,24 @@ public class PlayerMovement : MonoBehaviour
         rb.velocity = new Vector2(0f, 0f);
         canDash = true;
         Trail.SetActive(false);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // checks if player is hit then play sfx
+        if (collision.CompareTag("Enemy Projectile"))
+        {
+            Debug.Log("Player entered the trigger");
+            hitSound();
+        }
+    }
+
+    public void playSFX()
+    {
+        dashSFX.Play();
+    }
+
+    public void hitSound()
+    {
+        hitSFX.Play();
     }
 }

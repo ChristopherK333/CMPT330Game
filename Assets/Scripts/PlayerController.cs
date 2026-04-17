@@ -10,22 +10,17 @@ public class PlayerController : MonoBehaviour
     public float maxHealth;
     public Image healthBar;
 
-    public float stamina;
-    public float maxStam;
-    public Image stamBar;
-
     public float mana;
     public float maxMana;
     public Image manaBar;
 
-    public Coroutine stamRecharge;
-    public float stamChargeRate;
+    public GameObject gameOver;
 
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         maxHealth = health;
-        maxStam = stamina;
         maxMana = mana;
     }
 
@@ -33,32 +28,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         healthBar.fillAmount = Mathf.Clamp(health / maxHealth, 0, 1);
-        stamBar.fillAmount = Mathf.Clamp(stamina / maxStam, 0, 1);
         manaBar.fillAmount = Mathf.Clamp(mana / maxMana, 0, 1);
 
         if (health <= 0)
         {
-            string currentScene = SceneManager.GetActiveScene().name;
-            SceneManager.LoadScene(currentScene);
-        }
-
-        stamRecharge = StartCoroutine(RechargeStam());
-    }
-
-    private IEnumerator RechargeStam()
-    {
-        yield return new WaitForSeconds(1f);
-
-        while (stamina < maxStam)
-        {
-            stamina += stamChargeRate / 5f;
-            if (stamina > maxStam)
-            {
-                stamina = maxStam;
-            }
-
-            stamBar.fillAmount = Mathf.Clamp(stamina / maxStam, 0, 1);
-            yield return new WaitForSeconds(0.1f);
-        }
+            Time.timeScale = 0;
+            gameOver.SetActive(true);
+        }        
     }
 }

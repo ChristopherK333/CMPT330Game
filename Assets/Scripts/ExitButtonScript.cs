@@ -6,11 +6,8 @@ public class ExitButtonScript : MonoBehaviour
 {
     public void ExitButton()
     {
+        // exits the game
         Debug.Log("Exit button clicked!");
         Application.Quit();
-
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#endif
     }
 }

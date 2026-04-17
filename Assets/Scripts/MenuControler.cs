@@ -9,13 +9,13 @@ public class MenuControler : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        menuCanvas.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.I))
+        if (Input.GetKeyDown(KeyCode.I) || Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.Escape))
         {
             menuCanvas.SetActive(!menuCanvas.activeSelf); //what the menu canvas currently isnt
         }
